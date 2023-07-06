@@ -1,0 +1,169 @@
+#main {
+  position: relative;
+  top: -5.8rem;
+  max-width: 586px;
+  margin-inline: auto;
+  padding-inline: var(--padding-inline);
+}
+
+.todo-container, .todo-container .list-item:first-child {
+  border-radius: 5px 5px 0 0;
+}
+
+.bottom {
+  padding: 1rem;
+  margin-block-end: 1rem;
+  font-size: var(--fs-100);
+  border-radius: 0 0 5px 5px;
+  justify-content: space-between;
+  color: hsl(var(--dark-dark-grayish-blue), 0.75);
+  background-color: hsl(var(--dark-very-dark-desaturated-blue));
+  box-shadow: 0 0 15px hsl(var(--clr-black), 0.15);
+}
+
+.bottom.light {
+  background-color: hsl(var(--light-very-light-gray));
+  box-shadow: 0 5px 15px hsl(var(--light-dark-grayish-blue), 0.25);
+}
+
+.bottom button {
+  color: hsl(var(--dark-dark-grayish-blue), 0.75);
+  transition: color 0.25s ease-in;
+}
+
+.bottom button:hover {
+  color: hsl(var(--dark-light-grayish-blue-hover));
+}
+
+.bottom.light button:hover {
+  color: hsl(var(--light-very-dark-grayish-blue));
+}
+
+.actions {
+  padding: 1rem;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: hsl(var(--dark-very-dark-desaturated-blue));
+  box-shadow: 0 0 15px hsl(var(--clr-black), 0.15);
+}
+
+.actions.light {
+  background-color: hsl(var(--light-very-light-gray));
+  box-shadow: 0 5px 15px hsl(var(--light-dark-grayish-blue), 0.25);
+}
+
+.list-toggle {
+  gap: 1.5rem;
+  font-weight: 700;
+}
+
+.list-toggle button.selected {
+  color: hsl(var(--clr-primary-bright-blue));
+}
+
+.list-toggle button:not(.selected):hover,
+.actions > button:hover {
+  color: hsl(var(--dark-light-grayish-blue-hover));
+}
+
+.list-toggle.light button:not(.selected):hover {
+  color: hsl(var(--light-very-dark-grayish-blue));
+}
+
+.actions button,
+.actions .items-left {
+  font-size: var(--fs-100);
+  color: hsl(var(--dark-dark-grayish-blue), 0.75);
+  transition: color 0.25s ease-out;
+}
+
+footer {
+  margin-block-start: 3rem;
+  font-size: var(--fs-100);
+  color: hsl(var(--dark-dark-grayish-blue), 0.75);
+}
+
+.empty-todo {
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: var(--fs-300);
+  color: hsl(var(--dark-light-grayish-blue));
+  background-color: hsl(var(--dark-very-dark-desaturated-blue));
+  transition: color 0.25s ease-in, background-color 0.25s ease-out;
+}
+
+.empty-todo.light {
+  background-color: hsl(var(--light-very-light-gray));
+  color: hsl(var(--light-very-dark-grayish-blue));
+  box-shadow: 0 5px 15px hsl(var(--light-dark-grayish-blue), 0.25);
+}
+
+.duplicate {
+  padding: 1rem;
+  border-radius: 8px;
+  line-break: anywhere;
+  margin-block-end: 1rem;
+  font-size: var(--fs-100);
+  color: hsl(var(--dark-light-grayish-blue));
+  background-color: hsl(var(--dark-very-dark-desaturated-blue));
+}
+
+.duplicate .input-value {
+  color: hsl(var(--clr-primary-bright-blue));
+}
+
+.duplicate.light {
+  color: hsl(var(--clr-black), 0.75);
+  background-color: hsl(var(--light-very-light-gray));
+  box-shadow: 0 0px 15px hsl(var(--light-dark-grayish-blue), 0.25);
+}
+
+.duplicate.light .input-value {
+  color: hsl(var(--clr-linear-gradient-purple));
+}
+
+.message {
+  padding: 1rem 1.25rem;
+  font-size: var(--fs-300);
+  border-radius: 8px 8px 0 0;
+  color: hsl(var(--dark-light-grayish-blue));
+  border-bottom: 1px solid hsl(var(--dark-light-grayish-blue), 0.25);
+  background-color: hsl(var(--dark-very-dark-desaturated-blue));
+}
+
+.message.light {
+  color: hsl(var(--dark-dark-grayish-blue), 0.75);
+  border-color: hsl(var(--light-very-dark-grayish-blue), 0.25);
+  background-color: hsl(var(--light-very-light-gray));
+  box-shadow: 0 0px 15px hsl(var(--light-dark-grayish-blue), 0.15);
+}
+
+@media screen and (min-width: 375px) {
+  .bottom,
+  .empty-todo,
+  .actions,
+  .message,
+  .duplicate {
+    padding: 1rem 1.25rem;
+  }
+}
+
+@media screen and (min-width: 586px) {
+  .actions {
+    justify-content: space-between;
+    border-radius: 0 0 5px 5px;
+  }
+
+  #main {
+    top: -7.5rem;
+  }
+
+  .actions button,
+  .actions .items-left {
+    font-size: var(--fs-200);
+  }
+
+  .actions .items-left {
+    flex: 0 0 100px;
+  }
+}

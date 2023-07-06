@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+  /* Primary Colors */
+  --clr-primary-bright-blue: 220, 98%, 61%;
+  --clr-linear-gradient-green: 192, 100%, 67%;
+  --clr-linear-gradient-purple: 280, 87%, 65%;
+
+  /* Neutral Colors */
+
+  /* Light Theme */
+  --light-very-light-gray: 0, 0%, 98%;
+  --light-very-light-grayish-blue: 236, 33%, 92%;
+  --light-light-grayish-blue: 233, 11%, 84%;
+  --light-dark-grayish-blue: 236, 9%, 61%;
+  --light-very-dark-grayish-blue: 235, 19%, 35%;
+
+  /* Dark Theme */
+  --dark-very-dark-blue: 235, 21%, 11%;
+  --dark-very-dark-desaturated-blue: 235, 24%, 19%;
+  --dark-light-grayish-blue: 234, 39%, 85%;
+  --dark-light-grayish-blue-hover: 236, 33%, 92%;
+  --dark-dark-grayish-blue: 234, 11%, 52%;
+  --dark-very-dark-grayish-blue-one: 233, 14%, 35%;
+  --dark-very-dark-grayish-blue-two: 237, 14%, 26%;
+
+  --clr-black: 0, 0%, 0%;
+  --clr-white: 0, 0%, 100%;
+
+  /* font-sizes */
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-800: 3.5rem;
+  --fs-700: 2.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.5rem;
+  --fs-400: 1rem;
+  --fs-300: 0.9375rem;
+  --fs-200: 0.85rem;
+  --fs-100: 0.8rem;
+
+  /* font-families */
+  --ff-default: "Josefin Sans", sans-serif;
+
+  /* starting padding */
+  --padding-inline: 1.75rem;
+}
+
+/* Custom properties */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html:focus-within,
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: var(--fs-400);
+  font-family: var(--ff-default);
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+  -webkit-user-drag: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  background: none;
+  appearance: none;
+  border: none;
+  outline: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom properties */
+
+/* Reused styles start*/
+
+.container {
+  max-width: 100rem;
+  margin-inline: auto;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.none {
+  display: none;
+}
+
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.smooth {
+  scroll-behavior: smooth;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(var(--clr-linear-gradient-green)),
+    hsl(var(--clr-linear-gradient-purple))
+  );
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(
+    to top left,
+    hsl(var(--clr-linear-gradient-purple)),
+    hsl(var(--clr-linear-gradient-green)),
+    hsl(var(--clr-primary-bright-blue))
+  );
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--clr-primary-red), 0.8);
+}
+
+::selection {
+  color: hsl(var(--clr-black));
+  background-color: hsl(var(--clr-linear-gradient-green));
+}

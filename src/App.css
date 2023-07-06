@@ -1,0 +1,9 @@
+.App {
+  min-height: 100vh;
+  background-color: hsl(var(--dark-very-dark-blue));
+  transition: background-color 0.25s ease-in-out;
+}
+
+.App.light {
+  background-color: hsl(var(--light-dark-grayish-blue), 0.05);
+}
