@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import './additem.css'
-const AddItem = ({ theme, items, setItems, setItemAdded, setToggleState }) => {
+const AddItem = ({ theme, items, setItems, setItemAdded, toggleState, setToggleState }) => {
     const [inputValue, setInpuValue] = useState('');
     const inputField = useRef(null);
 
@@ -36,12 +36,14 @@ const AddItem = ({ theme, items, setItems, setItemAdded, setToggleState }) => {
                 return
             }
         }
-        // * Change the toggle state to All when adding a new item to the list 
-        setToggleState({
-            all: true,
-            active: false,
-            completed: false
-        });
+        // * Change the toggle state to All when adding a new item to the list except when active filter is on 
+        if (!toggleState.active) {
+            setToggleState({
+                all: true,
+                active: false,
+                completed: false
+            });
+        }
         setItems(prevItems => [...prevItems, itemObject]);
         setInpuValue('');
 
@@ -56,7 +58,7 @@ const AddItem = ({ theme, items, setItems, setItemAdded, setToggleState }) => {
                     name="new-item"
                     id="new-item"
                     className='new-item w-100'
-                    maxLength='50'
+                    maxLength='100'
                     placeholder="Create a new todo..."
                     autoComplete='off'
                     value={inputValue}

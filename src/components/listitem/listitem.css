@@ -2,7 +2,7 @@
   position: relative;
   gap: 1rem;
   z-index: 1;
-  padding: 1rem;
+  padding-inline: 1rem;
   cursor: pointer;
   justify-content: space-between;
   box-shadow: 0 0 15px hsl(var(--clr-black), 0.05);
@@ -45,6 +45,7 @@
 
 .content {
   gap: 1rem;
+  padding-block: 1rem;
 }
 
 .checkbox {
@@ -118,7 +119,7 @@
 }
 
 .item {
-  line-break: anywhere;
+  word-break: break-word;
   font-size: var(--fs-100);
   color: hsl(var(--dark-light-grayish-blue));
   transition: text-decoration 0.25s ease-in, color 0.35s ease-out;
@@ -154,11 +155,11 @@
 
 @media screen and (min-width: 375px) {
   .list-item {
-    padding: 1rem 1.25rem;
+    padding-inline: 1.25rem;
   }
 }
 
-@media screen and (min-width: 586px) {
+@media screen and (min-width: 1024px) {
   .cross {
     width: 15px;
     display: none;

@@ -46,6 +46,7 @@ const Main = ({ theme, items, setItems, originalList, setOriginalList, toggleSta
         setItems={setItems}
         setOriginalList={setOriginalList}
         setItemAdded={setItemAdded}
+        toggleState={toggleState}
         setToggleState={setToggleState} />
       {itemAdded.state && <p className={`duplicate ${theme ? 'dark' : 'light'}`}>Item '<strong className='input-value'>{`${itemAdded.value}`}</strong>' is already added</p>}
       {originalList.length ?
